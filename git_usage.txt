@@ -1,0 +1,6 @@
+1、git add file 将修改内容加到暂存区
+2、git reset HEAD file 删除暂存区的修改
+3、git checkout file 删除工作区的修改
+4、git commit -m 'comments' 提交修改到本地仓库并写上注释
+5、git push origin master 将本地仓库最新的修改内容推到远程仓库
+6、git rm file 删除文件
