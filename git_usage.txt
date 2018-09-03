@@ -4,3 +4,10 @@
 4、git commit -m 'comments' 提交修改到本地仓库并写上注释
 5、git push origin master 将本地仓库最新的修改内容推到远程仓库
 6、git rm file 删除文件
+7、git branch 查看当前分支
+8、git checkout -b dev 创建并切换到dev分支
+9、git checkout master 切换到master分支
+10、git merge dev 将dev分支合并到当前分支
+11、git branch -d dev 删除dev分支
+12、git branch -D temp 强制删除temp分支，temp分支没有完全合并时删除必须使用强制删除
+13、git branch temp 创建temp分支
