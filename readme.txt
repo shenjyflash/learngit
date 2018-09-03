@@ -1,1 +1,2 @@
 1、dubbo使用demo
+common 是提供者和消费者公用的接口
