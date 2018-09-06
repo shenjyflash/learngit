@@ -21,7 +21,7 @@
     <!-- 和本地bean一样实现服务 -->
     <bean id="demoService" class="com.shen.provider.user.UserService"  />
 
-<!-- 声明需要暴露的服务接口 -->
+	<!-- 声明需要暴露的服务接口  group用于服务分组适用情景一种服务有多种实现 -->
     <dubbo:service interface="com.shen.common.user.IUserService" ref="demoService"  group="no1" registry="N/A"/>
     
 </beans>
