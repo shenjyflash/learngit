@@ -25,7 +25,7 @@ public class App {
 	}
 	
 	/**
-	 * 不向注册中心注册
+	 * 异步调用
 	 */
 	public static void demo2(){
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:provider_2.xml");
