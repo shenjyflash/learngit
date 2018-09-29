@@ -8,4 +8,9 @@ public class BarService implements IBarService {
 		System.out.println("real save");
 	}
 
+	public String saySomething() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

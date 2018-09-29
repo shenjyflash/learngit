@@ -20,4 +20,10 @@ public class BarServiceStub implements IBarService {
 		}
 	}
 
+	@Override
+	public String saySomething() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

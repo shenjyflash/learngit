@@ -1,5 +1,6 @@
 package com.shen.consumer;
 
+import java.math.BigInteger;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -7,6 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.shen.common.bar.IBarService;
+import com.shen.common.resource.DcResourceEntity;
+import com.shen.common.resource.IResourceService;
 import com.shen.common.user.IUserService;
 import com.shen.common.user.User;
 
@@ -21,7 +24,7 @@ public class ComsumerApp {
 	 */
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		
-       demo2();
+		demo5();
        
         
 	}
@@ -68,5 +71,30 @@ public class ComsumerApp {
         IBarService demoService = (IBarService)context.getBean("demoService");
         System.out.println(demoService.getClass().toString());
         demoService.save( 12);
+	}
+	
+	/**
+	 * 本地伪装，使用mock返回容错数据
+	 * 防止消费者抛出RpcException
+	 * 
+	 */
+	public static void demo4(){ 
+		context = new ClassPathXmlApplicationContext("classpath:comsumer_4.xml");
+        context.start();
+        IBarService demoService = (IBarService)context.getBean("demoService");
+        System.out.println(demoService.getClass().toString());
+        String ss = demoService.saySomething();
+        System.out.println(ss);
+	}
+	
+	public static void demo5(){ 
+		context = new ClassPathXmlApplicationContext("classpath:comsumer_5.xml");
+        context.start();
+        IResourceService demoService = (IResourceService)context.getBean("demoService");
+        System.out.println(demoService.getClass().toString());
+        DcResourceEntity entity = new DcResourceEntity();
+        entity.setId(BigInteger.valueOf(2L));
+        DcResourceEntity ss = demoService.getDcResourceEntity(entity);
+        System.out.println(ss);
 	}
 }

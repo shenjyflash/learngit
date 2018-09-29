@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 功能模块:  -->
+<mapper namespace="com.shen.data.resource.dao.IResourceDao" >
+
+	<!--通用表字段列表-->
+	<resultMap id="BaseResultMap" type="com.shen.common.resource.DcResourceEntity">
+        <result column="ID" property="id" jdbcType="BIGINT"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="LEVEL" property="level" jdbcType="INTEGER"/>
+        <result column="PAGE_URL" property="pageUrl" jdbcType="VARCHAR"/>
+        <result column="PARENT_ID" property="parentId" jdbcType="INTEGER"/>
+        <result column="TYPE" property="type" jdbcType="VARCHAR"/>
+        <result column="SORT" property="sort" jdbcType="INTEGER"/>
+        <result column="IS_USE" property="isUse" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!--通用表字段列表-->
+    
+	
+
+	<!--查询字段列表拼装-->
+	<sql id="baseColumnList">
+			 ID		 
+			,NAME		 
+			,LEVEL		 
+			,PAGE_URL		 
+			,PARENT_ID		 
+			,TYPE		 
+			,SORT
+			,IS_USE		 
+	</sql>
+	
+	<!--
+	方法名称: insert
+	调用路径: DcResourceEntityMapper.insert
+	开发信息: 
+	处理信息: 保存记录
+	-->
+ 	
+	<!--
+	方法名称: findByPriKey
+	调用路径: DcResourceEntityMapper.findByPriKey
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="findByPriKey" parameterType="com.shen.common.resource.DcResourceEntity"  resultType="com.shen.common.resource.DcResourceEntity">
+		SELECT   
+		   <include refid="baseColumnList"/>
+		FROM   DC_RESOURCE         
+		WHERE
+				ID = #{id,jdbcType=BIGINT}		 
+	</select>
+	
+</mapper>
