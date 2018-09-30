@@ -6,4 +6,6 @@ public interface IResourceDao {
 	
 	public DcResourceEntity findByPriKey(DcResourceEntity temp);
 	
+	public void update(DcResourceEntity temp);
+	
 }

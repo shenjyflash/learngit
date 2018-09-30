@@ -10,13 +10,16 @@
     http://www.springframework.org/schema/tx   
     http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- 配置数据源 -->
+    <!-- 配置数据源
+    jdbc:mysql://10.0.1.249:3306/dcmall_test?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8  dcmall_test  dcmall_test
+    jdbc:mysql://localhost:3306/dcmall_temp?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8
+     -->
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>      
-        <property name="url" value="jdbc:mysql://10.0.1.249:3306/dcmall_test?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
-        <property name="username" value="dcmall_test"/>
-        <property name="password" value="dcmall_test"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/dcmall_tmp?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
     </bean>
     <!-- 配置数据工厂 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

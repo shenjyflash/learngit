@@ -1,6 +1,7 @@
 package com.shen.data.resource.service;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.shen.common.resource.DcResourceEntity;
 
@@ -9,6 +10,7 @@ import com.shen.common.resource.DcResourceEntity;
  * @author：shenjy
  * @version:1.0
  */
+@Transactional
 @Component
 public interface DcResourceService{
 	
@@ -19,5 +21,5 @@ public interface DcResourceService{
      */
 	public DcResourceEntity get(DcResourceEntity entity);
 	
-	
+	public void update(DcResourceEntity entity);
 }

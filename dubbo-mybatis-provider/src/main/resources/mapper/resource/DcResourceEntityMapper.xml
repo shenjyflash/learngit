@@ -51,4 +51,8 @@
 				ID = #{id,jdbcType=BIGINT}		 
 	</select>
 	
+	<update id="update" parameterType="com.shen.common.resource.DcResourceEntity" >
+		update DC_RESOURCE set NAME=#{name,jdbcType=VARCHAR}	where id=#{id,jdbcType=BIGINT}		
+	</update>
+	
 </mapper>

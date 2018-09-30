@@ -93,6 +93,7 @@ public class ComsumerApp {
         IResourceService demoService = (IResourceService)context.getBean("demoService");
         System.out.println(demoService.getClass().toString());
         DcResourceEntity entity = new DcResourceEntity();
+        entity.setName("企业管理-2");
         entity.setId(BigInteger.valueOf(2L));
         DcResourceEntity ss = demoService.getDcResourceEntity(entity);
         System.out.println(ss);
